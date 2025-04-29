@@ -1,0 +1,33 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+/* style defaults */
+
+
+body {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+}
+body section {
+    border: 5px solid rgb(0, 0, 0);
+}
+/* main container */
+
+
+.library {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 100px);
+}
+/* book storage area */
+
+
+
+/* interaction panel */
