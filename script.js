@@ -61,12 +61,18 @@ function addBookToLibrary(nameBook) {
     const book = document.createElement("div");
     book.setAttribute("id", nameBook.idBook);
     book.classList.add("book");
-    book.setAttribute("title", `Annotation: ${nameBook.title} by ${nameBook.author}, ${nameBook.pages} pages`);
+    book.setAttribute("title", `Annotation: ${nameBook.title} by ${nameBook.author}, ${nameBook.pages} pages.`);
     
     const titleBook = document.createElement("h1");
     titleBook.classList.add("rotated-text");
-    titleBook.textContent = nameBook.title;
+    titleBook.innerHTML = `${nameBook.title}<br>by ${nameBook.author}`;
     book.appendChild(titleBook);
+
+    const raedStatus = document.createElement("div");
+    raedStatus.classList.add("raedStatus");
+    raedStatus.textContent = nameBook.read;
+    book.appendChild(raedStatus);
+
 
     library.appendChild(book);
 };

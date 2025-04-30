@@ -25,8 +25,7 @@ body section {
 
 
 #library {
-    box-sizing: content-box;
-    flex: 0 1 clamp(300px, 1200px, 1600px);
+    flex: 0 1 1210px;
 
     display: grid;
     grid-template: repeat(3, 1fr) / repeat(auto-fit, 100px);
@@ -37,16 +36,37 @@ body section {
 
     border: 1px solid rgb(0, 0, 0);
 
-    align-content: center;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 .book:hover {
     margin: 5px;
 }
 
 .rotated-text {
-    transform: rotate(-90deg);
-    transform-origin: right top;
+    font-size: 18px;
+    text-align: center;
+
+    padding-right: 40px;
+
     display: inline-block;
+    transform: rotate(-90deg);
+    white-space: nowrap;
+}
+
+.raedStatus {
+    font-size: 12px;
+    text-align: center;
+
+    width: 100%;
+
+    padding: 5px;
+    margin: 0 5px;
+
+    border: 1px solid rgb(0, 0, 0);
 }
 /* book storage area */
 
