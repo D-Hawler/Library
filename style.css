@@ -4,13 +4,15 @@
     box-sizing: border-box;
 }
 
-html, body {
+html, body, #library, .menu {
     height: 100%;
 }
 /* style defaults */
 
 
 body {
+    padding: 80px;
+
     display: flex;
     gap: 40px;
     justify-content: center;
@@ -22,12 +24,34 @@ body section {
 /* main container */
 
 
-.library {
+#library {
+    box-sizing: content-box;
+    flex: 0 1 clamp(300px, 1200px, 1600px);
+
     display: grid;
-    grid-template-columns: repeat(auto-fill, 100px);
+    grid-template: repeat(3, 1fr) / repeat(auto-fit, 100px);
+}
+
+.book {
+    margin: 10px;
+
+    border: 1px solid rgb(0, 0, 0);
+
+    align-content: center;
+}
+.book:hover {
+    margin: 5px;
+}
+
+.rotated-text {
+    transform: rotate(-90deg);
+    transform-origin: right top;
+    display: inline-block;
 }
 /* book storage area */
 
 
-
+.menu {
+    flex: 0 0 20%;
+}
 /* interaction panel */
