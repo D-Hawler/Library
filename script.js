@@ -1,4 +1,4 @@
- const arrBook = [];
+let arrBook = [];
 
 function CreatingBooks(title, author, pages, read, idBook) {
     if (!new.target) {
@@ -33,33 +33,19 @@ addBook.addEventListener("submit", function(event) {
     let nameBook = title;
     nameBook = new CreatingBooks(title, author, pages, read, crypto.randomUUID());
 
-    addBookToArray(nameBook);
-
-    addBookToLibrary(nameBook);
-
-
-
-    console.log(nameBook.infoBook());
-
-    console.log(nameBook.valueOf());
-
-    console.log("Hello world!!");
-});
-
-function addBookToArray(nameBook) {
     arrBook.push(nameBook);
 
-
-
-
-    console.log(arrBook);
-};
+    addBookToLibrary(nameBook);
+});
 
 function addBookToLibrary(nameBook) {
     const library = document.querySelector("#library");
 
+    const bookContainer = document.createElement("div");
+    bookContainer.setAttribute("id", nameBook.idBook);
+    bookContainer.classList.add("bookContainer");
+
     const book = document.createElement("div");
-    book.setAttribute("id", nameBook.idBook);
     book.classList.add("book");
     book.setAttribute("title", `Annotation: ${nameBook.title} by ${nameBook.author}, ${nameBook.pages} pages.`);
     
@@ -70,9 +56,63 @@ function addBookToLibrary(nameBook) {
 
     const raedStatus = document.createElement("div");
     raedStatus.classList.add("raedStatus");
-    raedStatus.textContent = nameBook.read;
+
+    const switchReadStatus = document.createElement("a");
+    switchReadStatus.setAttribute("href", "#");
+    switchReadStatus.classList.add("switchReadStatus");
+    switchReadStatus.setAttribute("id", nameBook.idBook);
+    switchReadStatus.textContent = nameBook.read;
+    
+    raedStatus.appendChild(switchReadStatus);
     book.appendChild(raedStatus);
 
+    bookContainer.appendChild(book);
 
-    library.appendChild(book);
+    const deleteBook = document.createElement("a");
+    deleteBook.setAttribute("href", "#");
+    deleteBook.classList.add("deleteBook");
+    deleteBook.innerHTML = "&times;";
+
+    bookContainer.appendChild(deleteBook);
+
+
+    library.appendChild(bookContainer);
 };
+
+
+
+const library = document.querySelector("#library");
+
+library.addEventListener("click", function(event) {
+    event.preventDefault()
+    if (event.target.classList.contains("switchReadStatus")) {
+        const switchReadStatus = event.target;
+
+        const searchID = arrBook.find(searchID => searchID.idBook === switchReadStatus.id);
+        
+        if (switchReadStatus.textContent === "Didn't read") {
+            switchReadStatus.textContent = "Read";
+            searchID.read = "Read";
+
+            console.log(searchID);
+        } else {
+            switchReadStatus.textContent = "Didn't read";
+            searchID.read = "Didn't read";
+
+            console.log(searchID);
+        };    
+    };
+});
+
+library.addEventListener("click", function(event) {
+    event.preventDefault();
+    if (event.target.classList.contains("deleteBook")) {
+        const deleteBook = event.target;
+
+        const parentContainer = deleteBook.parentNode;
+        parentContainer.remove();
+
+        arrBook = arrBook.filter(searchID => searchID.idBook !== parentContainer.id);
+        console.log(arrBook);
+    };
+});

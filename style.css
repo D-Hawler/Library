@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-html, body, #library, .menu {
+html, body, #library, .menu, .book  {
     height: 100%;
 }
 /* style defaults */
@@ -31,9 +31,13 @@ body section {
     grid-template: repeat(3, 1fr) / repeat(auto-fit, 100px);
 }
 
-.book {
+.bookContainer {
     margin: 10px;
 
+    position: relative;
+}
+
+.book {
     border: 1px solid rgb(0, 0, 0);
 
     display: flex;
@@ -43,7 +47,7 @@ body section {
     align-items: center;
 }
 .book:hover {
-    margin: 5px;
+    transform: scale(1.05);
 }
 
 .rotated-text {
@@ -57,6 +61,11 @@ body section {
     white-space: nowrap;
 }
 
+a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
 .raedStatus {
     font-size: 12px;
     text-align: center;
@@ -67,6 +76,26 @@ body section {
     margin: 0 5px;
 
     border: 1px solid rgb(0, 0, 0);
+}
+
+.deleteBook {
+    padding: 5px 10px;
+
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 100px;
+
+    position: absolute;
+    bottom: -15px;
+    right: -15px;
+
+    background-color: rgb(255, 255, 255);
+}
+
+.deleteBook:hover {
+    transform: scale(1.1);
+
+    font-size: 20px;
+    font-weight: bold;
 }
 /* book storage area */
 
