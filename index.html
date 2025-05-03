@@ -9,35 +9,80 @@
 </head>
 <body>
     <section id="library">
-        <div id="172824ee-5edc-4e23-a573-7933109de3af" class="bookContainer">
-            <div class="book" title="Annotation: Monogatari by Nisio isin , 292 pages.">
-                <h1 class="rotated-text">Monogatari<br>by Nisio isin </h1>
-                <div class="raedStatus"><a href="#" class="switchReadStatus" id="172824ee-5edc-4e23-a573-7933109de3af">Didn't read</a></div>
+        <div id="49a775eb-8016-4e07-9a0b-361429132052" class="bookContainer">
+            <div class="book" title="Annotation: Dune by Frank Herbert, 412 pages.">
+                <h1 class="rotated-text">Dune<br>by Frank Herbert</h1>
+                <div class="raedStatus">
+                    <a href="#" class="switchReadStatus" id="49a775eb-8016-4e07-9a0b-361429132052">Didn't read</a>
+                </div>
             </div>
-            <a href="#" class="deleteBook">×</a>
+            <a href="#" class="deleteBook">&times;</a>
+        </div>
+        <div id="d3d0fae3-40f3-4b52-b76c-20f3e625f13a" class="bookContainer">
+            <div class="book" title="Annotation: 1984 by George Orwell, 328 pages.">
+                <h1 class="rotated-text">1984<br>by George Orwell</h1>
+                <div class="raedStatus">
+                    <a href="#" class="switchReadStatus" id="d3d0fae3-40f3-4b52-b76c-20f3e625f13a">Didn't read</a>
+                </div>
+            </div><a href="#" class="deleteBook">&times;</a>
+        </div>
+        <div id="2d56ddaf-9210-4d3a-8328-c5981c2f9349" class="bookContainer">
+            <div class="book" title="Annotation: Sula by Toni Morrison, 192 pages.">
+                <h1 class="rotated-text">Sula<br>by Toni Morrison</h1>
+                <div class="raedStatus">
+                    <a href="#" class="switchReadStatus" id="2d56ddaf-9210-4d3a-8328-c5981c2f9349">Didn't read</a>
+                </div>
+            </div>
+            <a href="#" class="deleteBook">&times;</a>
+        </div>
+        <div id="ac2ec106-8bf6-4d52-8c7b-186079279d88" class="bookContainer">
+            <div class="book" title="Annotation: Coraline by Neil Gaiman, 194 pages.">
+                <h1 class="rotated-text">Coraline<br>by Neil Gaiman</h1>
+                <div class="raedStatus">
+                    <a href="#" class="switchReadStatus" id="ac2ec106-8bf6-4d52-8c7b-186079279d88">Didn't read</a>
+                </div>
+            </div>
+            <a href="#" class="deleteBook">&times;</a>
+        </div>
+        <div id="72de8382-afe8-47d1-8495-4b7ceefea53c" class="bookContainer">
+            <div class="book" title="Annotation: Amarimonogatari by Nisio isin, 401 pages.">
+                <h1 class="rotated-text">Amarimonogatari<br>by Nisio isin</h1>
+                <div class="raedStatus">
+                    <a href="#" class="switchReadStatus" id="72de8382-afe8-47d1-8495-4b7ceefea53c">Read</a>
+                </div>
+            </div>
+            <a href="#" class="deleteBook">&times;</a>
         </div>
     </section>
     <section class="menu">
-        <form id="addBook">
-            <fieldset>
-                <label for="title">Title:</label>
-                <input type="text" id="title" maxlength="15" required><br>
-
-                <label for="author">Author:</label>
-                <input type="text" id="author" maxlength="15" required><br>
-
-                <label for="pages">Pages:</label>
-                <input type="text" id="pages" required><br>
-
-                <label for="raed">Did you read this book</label>
-                <select id="read">
-                    <option value="Didn't read">didn't read</option>
-                    <option value="Read">read</option>
-                </select><br>
-
-                <button type="submit">Add the book</button>
-            </fieldset>
-        </form>
+        <div>
+            <h1>Settings:</h1>
+            <form id="addBook">
+                <fieldset>
+                    <div>
+                        <label for="title">Title:</label>
+                        <input type="text" id="title" maxlength="15" required><br>
+                    </div>
+                    <div>
+                        <label for="author">Author:</label>
+                        <input type="text" id="author" maxlength="15" required><br>
+                    </div>
+                    <div>
+                        <label for="pages">Pages:</label>
+                        <input type="text" id="pages" required><br>
+                    </div>
+                    <div>
+                        <label for="raed">Did you read this book</label>
+                        <select id="read">
+                            <option value="Didn't read">didn't read</option>
+                            <option value="Read">read</option>
+                        </select><br>
+                    </div>
+                    <button type="submit">Add the book</button>
+                </fieldset>
+            </form>
+        </div>
+        <button id="infoButton">INFO</button>
     </section>
 </body>
 </html>
