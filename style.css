@@ -124,17 +124,17 @@ fieldset {
 }
 
 input, select {
-    width: 100%; /* Поля занимают всю доступную ширину */
-    padding: 5px; /* Внутренний отступ для удобства */
-    margin-bottom: 10px; /* Отступ между полями */
-    border: 1px solid #000; /* Граница для всех полей */
-    border-radius: 5px; /* Скруглённые углы (опционально) */
-    box-sizing: border-box; /* Учитываем padding в ширине */
-    font-size: 14px; /* Размер текста */
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
 }
 
 button {
-    width: 100%; /* Кнопка тоже будет ровной */
+    width: 100%;
     padding: 5px;
     margin-top: 10px;
     font-size: 14px;

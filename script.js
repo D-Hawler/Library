@@ -36,21 +36,16 @@ let arrBook = [
     }
 ];
 
-function CreatingBooks(title, author, pages, read, idBook) {
-    if (!new.target) {
-        throw Error(`No “new” found when creating an object`);
+
+class CreatingBooks {
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+
+        this.idBook = crypto.randomUUID();
     };
-
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-
-    this.idBook = idBook;
-};
-
-CreatingBooks.prototype.infoBook = function() {
-    return `${this.title}, ${this.author}, ${this.pages}, ${this.read}, ${this.idBook}`;
 };
 
 
@@ -71,23 +66,14 @@ addBook.addEventListener("submit", function(event) {
     const pages = document.getElementById("pages").value;
     const read = document.getElementById("read").value;
 
-    nameBook = new CreatingBooks(title, author, pages, read, crypto.randomUUID());
+    nameBook = new CreatingBooks(title, author, pages, read);
 
     arrBook.push(nameBook);
 
     addBookToLibrary(nameBook);
     
-
-
-    const titleInput = document.getElementById("title");
-    const authorInput = document.getElementById("author");
-    const pagesInput = document.getElementById("pages");
-    const readInput = document.getElementById("read");
-
-    titleInput.value = "";
-    authorInput.value = "";
-    pagesInput.value = "";
-    readInput.value = "Didn't read";
+    ["title", "author", "pages"].forEach(id => document.getElementById(id).value = "");
+    document.getElementById("read").value = "Didn't read";
 });
 
 function addBookToLibrary(nameBook) {
@@ -132,7 +118,6 @@ function addBookToLibrary(nameBook) {
 };
 
 
-
 const library = document.querySelector("#library");
 
 library.addEventListener("click", function(event) {
@@ -145,13 +130,9 @@ library.addEventListener("click", function(event) {
         if (switchReadStatus.textContent === "Didn't read") {
             switchReadStatus.textContent = "Read";
             searchID.read = "Read";
-
-            console.log(searchID);
         } else {
             switchReadStatus.textContent = "Didn't read";
             searchID.read = "Didn't read";
-
-            console.log(searchID);
         };    
     };
 });
